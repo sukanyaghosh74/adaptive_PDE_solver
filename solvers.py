@@ -66,10 +66,15 @@ class AdaptiveSolver(FiniteDifferenceSolver):
         for n in reversed(range(self.N_t)):
             dt = t[1] - t[0]
             # Adaptive grid refinement
-            S_curr = S.copy()
-            V_curr = Vn.copy()
+            S_curr = np.array(S, dtype=float).copy()
+            V_curr = np.array(Vn, dtype=float).copy()
             for _ in range(self.max_refine_steps):
-                grad = np.abs(np.gradient(V_curr, S_curr))
+                if S_curr.ndim != 1 or V_curr.ndim != 1 or len(S_curr) != len(V_curr):
+                    break
+                try:
+                    grad = np.abs(np.gradient(V_curr, S_curr))
+                except Exception:
+                    break
                 refine_mask = grad > self.refine_tol
                 if not np.any(refine_mask):
                     break

@@ -8,8 +8,8 @@ def test_uniform_solver_accuracy():
     r = 0.05
     sigma = 0.2
     T = 1.0
-    N_S = 200  # Increased for better accuracy
-    N_t = 200  # Increased for better accuracy
+    N_S = 400  # Increased for better accuracy
+    N_t = 400  # Increased for better accuracy
     option_type = 'call'
     solver = FiniteDifferenceSolver(S_max, K, r, sigma, T, N_S, N_t, option_type)
     S, t, V = solver.solve()
