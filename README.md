@@ -72,4 +72,4 @@ python tests.py
 
 ---
 
-**Author:** [Your Name]
+**Author:** Sukanya Ghosh
