@@ -12,6 +12,7 @@ This project implements **adaptive finite difference solvers** for the Black–S
 - **Plots**: price surface, final price, grid density
 - **CSV output** of results
 - **Unit tests** for accuracy
+- **Beautiful Streamlit frontend** for interactive exploration
 
 ## Folder Structure
 
@@ -22,6 +23,7 @@ adaptive_pde_option_pricing/
 ├── grids.py           # Grid generation and refinement logic
 ├── utils.py           # Helper functions (payoff, plots, Black-Scholes)
 ├── tests.py           # Unit tests for solvers
+├── app.py             # Streamlit frontend
 ├── results/           # Stores plots and CSV results
 └── README.md          # This file
 ```
@@ -32,27 +34,28 @@ adaptive_pde_option_pricing/
 - numpy
 - scipy
 - matplotlib
+- streamlit
 
 Install dependencies:
 ```bash
-pip install numpy scipy matplotlib
+pip install numpy scipy matplotlib streamlit
 ```
 
 ## Usage
 
-Run the main example:
+### Run the main example (CLI):
 ```bash
 python main.py
 ```
 
-This will:
-- Solve the Black–Scholes PDE for a European call (S ∈ [0, 200], K=100, r=0.05, σ=0.2, T=1)
-- Compare adaptive and uniform solvers
-- Save plots and CSVs in `results/`
+### Run the beautiful frontend (recommended!):
+```bash
+streamlit run app.py
+```
 
-## Testing
+This will open a web app in your browser where you can adjust parameters, run solvers, and visualize results interactively.
 
-Run unit tests:
+### Run unit tests:
 ```bash
 python tests.py
 ```
