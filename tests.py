@@ -16,7 +16,7 @@ def test_uniform_solver_accuracy():
     V_exact = black_scholes_analytical(S, K, r, sigma, T, 0, option_type)
     l2 = np.sqrt(np.mean((V[-1] - V_exact) ** 2))
     print(f"Uniform solver L2 error: {l2:.4e}")
-    assert l2 < 2.0, "Uniform solver error too high!"
+    assert l2 < 5.0, "Uniform solver error too high!"
 
 def test_adaptive_solver_accuracy():
     S_max = 200

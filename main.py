@@ -38,7 +38,7 @@ def run_example():
 
     # Plots
     plot_surface(S_u, t_u, V_u, "Uniform Grid Price Surface", os.path.join(RESULTS_DIR, "uniform_surface.png"))
-    plot_surface(S_a_list[-1], t_a, np.array(V_a_list).T, "Adaptive Grid Price Surface", os.path.join(RESULTS_DIR, "adaptive_surface.png"))
+    plot_surface(S_a_list, t_a, V_a_list, "Adaptive Grid Price Surface", os.path.join(RESULTS_DIR, "adaptive_surface.png"))
     plot_final_price(S_u, V_u[-1], V_exact, S_a_list[-1], V_a_list[-1], K, os.path.join(RESULTS_DIR, "final_price_comparison.png"))
     plot_grid_density(grids, K, os.path.join(RESULTS_DIR, "adaptive_grid_density.png"))
 
